@@ -1,4 +1,9 @@
 @echo off
-REM Quick launcher for the Pour Decisions dev server.
+setlocal
 cd /d "%~dp0\pour-decisions"
-npm run dev -- --host
+
+if exist ".venv\Scripts\activate.bat" (
+  call ".venv\Scripts\activate.bat"
+)
+
+python main.py
